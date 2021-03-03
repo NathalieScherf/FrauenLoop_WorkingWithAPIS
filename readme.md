@@ -88,3 +88,14 @@ Once we have sent the request and gotten a result back, we want to do something 
 This last step is like getting a tray of food from the kitchen and unwrapping it! 
 
 Enjoy!
+
+	
+  
+## More reading on fetch: 
+[jsInfo-Fetch](https://javascript.info/fetch)
+
+## Link to the APIs we use: 
+
+[themeal.db](https://www.themealdb.com/api.php)
+
+[random user](https://randomuser.me/documentation)
