@@ -1,0 +1,41 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Working with an API: Meals DB",
+  "steps": [
+    {
+      "file": "index.html",
+      "description": "### Using the Meals.db API \n\nIn this project, we will get the data we display on the page from an API. In the HTML file, we create a button with the id `meals`,on which we can click to start the call to the API and an empty div with the class `dinner`, into which we will put some of the data we get from the API. ",
+      "line": 10
+    },
+    {
+      "file": "index.html",
+      "description": "### Link the script\n\nAs the communication with the API will happen using JavaScript, we must not forget the link to our `script.js`- file!",
+      "line": 21
+    },
+    {
+      "file": "script.js",
+      "description": "### Attach event listener to Button\nHere we grab the button with the id `meals` and attach an event listener. The event listener waits for a click on the button, and once a click happens, the function `getMeal` will be called. \n\nIn the function `getMeal` 3 things happen: \n1. we send a request to the API meals.db and parse the data we get back\n2. we inspect the data and find the parts we are interested in using. \n3. we build an Html-element (a div) and insert the parts of the data into the div.\n \nWe will look at each step in detail: ",
+      "line": 44
+    },
+    {
+      "file": "script.js",
+      "description": "### Send a request and parse the data\n\nHere we use fetch and make a GET request to the API `themeal.db`. The last piece of the url `/random.php` tells us that we are ordering a random meal from this API. \nOnce the request is done, the result is stored in the variable myData. In this case, `myData` is a JSON-object. It is a special type of object, and we need to translate it to a regular JavaScript object. We do this by calling the method `json()` on `myData` and store the result in the variable `theActualObject`.",
+      "line": 25
+    },
+    {
+      "file": "script.js",
+      "description": "### Pick some pieces\n\nThis is an unneccessary step, which I like to add, just because it makes the subsequent lines of code easier to read and write. `theActualObject` is a big object with one property `meals` and `meals` contains an array.  I am only interested in the first element in this array, so I store this in a new variable `myMeal`.",
+      "line": 29
+    },
+    {
+      "file": "script.js",
+      "description": "### Add the meal to the page\n\nHere we create a new div, to which we add some HTML using the property `innerHTML`. \nHere I use template strings, so that we easily can mix strings and properties of the object `myMeal`. In the image-tag, the `src` attribute gets its value from the property `strMealThumb` on the object `myMeal`. In the h5-tag we insert the name of the meal, and in a p-tag we insert the category.  \n\nIn line 38, we add the div we just created to the page!",
+      "line": 32
+    },
+    {
+      "file": "script.js",
+      "description": "### Dealing with errors\n\nSometimes things go wrong when we fetch data. The address to the API migth contain a typo, or the server might be down for a minute. \nSince we expect things to go wrong (always prepare for the worst!), we put the code containing the fetch in a `try`-block (see line 24), which ends in line 40. \nIn case something goes wrong, an error is thrown. We need to catch this error somewhere, and we do it here in the `catch` - block. For us developers it it good to see the error on the console, so we log it. For the user of our page, we display an error message in the div with the class `dinner`.",
+      "line": 40
+    }
+  ]
+}

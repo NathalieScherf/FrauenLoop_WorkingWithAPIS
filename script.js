@@ -1,7 +1,5 @@
 // Add content p, h2, to the div with the class dinner?
-
 let dinnerDiv = document.querySelector('.dinner')
-
 let content = document.createElement('div')
 let guest = "Berta"
 content.innerHTML = (
@@ -23,21 +21,28 @@ content.innerHTML = (
  */
 
 const getMeal = async () => {
-  // get some data from Meals.db - API
-  let myData = await fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-  // we need to change format of the data:
-  let theActualObject = await myData.json()
-  // pick out the parts we want; 
-  let myMeal = theActualObject.meals[0]
-  console.log(myMeal);
-  // add parts to our page
-  let mealDisplay = document.createElement('div')
-  mealDisplay.innerHTML = (`
+  try {
+    // get some data from Meals.db - API
+    let myData = await fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+    // we need to change format of the data:
+    let theActualObject = await myData.json()
+    // pick out the parts we want; 
+    let myMeal = theActualObject.meals[0]
+    console.log(myMeal);
+    // add parts to our page
+    let mealDisplay = document.createElement('div')
+    mealDisplay.innerHTML = (`
    <img src="${myMeal.strMealThumb}" style="height: 100px">
    <h5>${myMeal.strMeal}</h5>
    <p> ${myMeal.strCategory}</p>
    `)
-  dinnerDiv.append(mealDisplay)
+    dinnerDiv.append(mealDisplay)
+  } catch (error) {
+    console.log(error);
+    let mealDisplay = document.createElement('div')
+    mealDisplay.innerText = 'Could not load data from person-api'
+    dinnerDiv.append(mealDisplay)
+  }
 }
 
 
