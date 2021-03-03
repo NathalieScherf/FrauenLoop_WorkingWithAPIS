@@ -99,3 +99,5 @@ Enjoy!
 [themeal.db](https://www.themealdb.com/api.php)
 
 [random user](https://randomuser.me/documentation)
+
+[A collection of other free APIs](https://www.programmableweb.com/category/random/api)
