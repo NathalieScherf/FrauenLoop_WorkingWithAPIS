@@ -5,7 +5,7 @@ When we want to get data from a server, we need to send a request for data from 
 I like to think of an API as a counter in a fast food restaurant. First, we have a look at the menue to see what we want to order. Then we place the order and a bit later, our food arrives! 
 Have a look at the image:[The API-restaurant](./API_GetBurger.png)
 
-In code, this means that first we read the Dokumantation of the API to see what type of data we can get and how to order it!
+In code, this means that first we read the documentation of the API to see what type of data we can get and how to order it!
 
 Then, placing an order translates to sending a request.  
 We have many possibilities to do this, but here are the most common:
