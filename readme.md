@@ -38,7 +38,7 @@ Here are 3 examples all doing the same thing: Using fetch to get data from the m
 ``` javaScript 
 
 const callBackFetch = () => {
-  fetch('my api', (err, response)=> {
+  fetch('https://www.themealdb.com/api/json/v1/1/random.php', (err, response)=> {
     if (err) { 
       console.log(err)
       } else {
@@ -55,7 +55,7 @@ const callBackFetch = () => {
 ``` javaScript 
 
 const promiseFetch = () => {
-  fetch('my api')
+  fetch('https://www.themealdb.com/api/json/v1/1/random.php')
   .then(response => {
     let parsedData = response.json()
     console.log(parsedData)
@@ -73,7 +73,7 @@ const promiseFetch = () => {
 
 const asyncFetch = () => {
   try {
-    let response = await fetch('my api')
+    let response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     let parsedData = await response.json()
     console.log(parsedData)
   } catch(error){
