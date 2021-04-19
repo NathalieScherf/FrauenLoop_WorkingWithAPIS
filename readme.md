@@ -71,7 +71,7 @@ const promiseFetch = () => {
 
 ``` javaScript 
 
-const asyncFetch = () => {
+const asyncFetch = async () => {
   try {
     let response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     let parsedData = await response.json()
