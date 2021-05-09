@@ -101,3 +101,7 @@ Enjoy!
 [random user](https://randomuser.me/documentation)
 
 [A collection of other free APIs](https://www.programmableweb.com/category/random/api)
+
+
+----
+This project is created by [Nathalie Scherf](https://github.com/NathalieScherf)
