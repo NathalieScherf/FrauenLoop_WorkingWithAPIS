@@ -20,7 +20,7 @@ Fetch is availabe in the browser via the [Web-API](https://developer.mozilla.org
 
 3. using axios
 
-axios is a library on its own, which we can also include in our code using a link to a cnd or installing [have a look here](https://github.com/axios/axios).
+axios is a library on its own, which we can also include in our code using a link to a cdn or installing [have a look here](https://github.com/axios/axios).
 
 All of these options are *asynchronous*. That means that our programm (the code) starts the request, by sending it, but it is not waiting for the answer! Instead the programm continues to the next line of code. But we need that answer, so we need to find a way to be informed that the request is done and response is here! 
 There are 3 ways to do this: 
