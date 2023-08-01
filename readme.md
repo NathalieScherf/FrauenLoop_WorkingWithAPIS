@@ -31,26 +31,9 @@ This is an easier way to deal with asyncronous code. A request with fetch return
 3. Using async await
 This is syntactic sugar on a promise (making a promise look better), and makes it easier to write and read asyncronous code. 
 
-Here are 3 examples all doing the same thing: Using fetch to get data from the meals.db and log the response. 
+Here are 2 examples all doing the same thing: Using fetch to get data from the meals.db and log the response. 
 
-1. Call-back: 
-
-``` javaScript 
-
-const callBackFetch = () => {
-  fetch('https://www.themealdb.com/api/json/v1/1/random.php', (err, response)=> {
-    if (err) { 
-      console.log(err)
-      } else {
-    let parsedData = response.json()
-          console.log(parsedData)
-      }
-  })
-}
-
-``` 
-
-2. Promise: 
+1. Promise: 
 
 ``` javaScript 
 
@@ -58,7 +41,9 @@ const promiseFetch = () => {
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
   .then(response => {
     let parsedData = response.json()
-    console.log(parsedData)
+	return parsedData
+  }).then (data => {
+	console.log(data)
   })
   .catch(error => {
     console.log(error)
@@ -67,7 +52,7 @@ const promiseFetch = () => {
 
 ``` 
 
-3. Async await: 
+2. Async await: 
 
 ``` javaScript 
 
