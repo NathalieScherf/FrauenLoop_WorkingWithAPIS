@@ -23,12 +23,10 @@ Fetch is availabe in the browser via the [Web-API](https://developer.mozilla.org
 axios is a library on its own, which we can also include in our code using a link to a cdn or installing [have a look here](https://github.com/axios/axios).
 
 All of these options are *asynchronous*. That means that our programm (the code) starts the request, by sending it, but it is not waiting for the answer! Instead the programm continues to the next line of code. But we need that answer, so we need to find a way to be informed that the request is done and response is here! 
-There are 3 ways to do this: 
-1. a call back function: 
-Once the request is done, an other function (the call back) is called, and in it we have access to the response.
-2. Using promises. 
+There are 2 modern ways to do this: 
+1. Using promises. 
 This is an easier way to deal with asyncronous code. A request with fetch returns a promise, and once the request is done, the promise is resolved, and we have access to the data. 
-3. Using async await
+2. Using async await
 This is syntactic sugar on a promise (making a promise look better), and makes it easier to write and read asyncronous code. 
 
 Here are 2 examples all doing the same thing: Using fetch to get data from the meals.db and log the response. 
